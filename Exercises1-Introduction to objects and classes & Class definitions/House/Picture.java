@@ -15,6 +15,7 @@ public class Picture {
     private Triangle roof;
     private Circle sun;
     private boolean drawn;
+    private Person person;
 
     /**
      * Constructor for objects of class Picture
@@ -25,6 +26,7 @@ public class Picture {
         roof = new Triangle();
         sun = new Circle();
         drawn = false;
+        person = new Person();
     }
 
     /**
@@ -55,14 +57,9 @@ public class Picture {
             sun.makeVisible();
             // Excercise 1.18: add sunset going down.
             // sun.slowMoveVertical(300);
-            // Excercise 1.19: add sunset going up.
             sun.slowMoveVertical(-70);
-            // Excercise 1.19: call sunset method to go down.
-            sunset(sun, 300);
-            // Excercise 1.19: make a person walk up to the house after the sunset.
-            Person person = new Person();
-            person.makeVisible();
-            person.slowMoveHorizontal(100);
+            // Excercise 1.20: make a person walk up to the house after the sunset.
+            // Person person = new Person();
 
             drawn = true;
         }
@@ -88,7 +85,12 @@ public class Picture {
         sun.changeColor("blue");
     }
 
-    private void sunset(Circle sun, int distance) {
+    public void sunset(int distance) {
         sun.slowMoveVertical(distance);
+        // Exercise 1.20
+        // Make a person walk up to the house after the sunset.
+        person.makeVisible();
+        person.moveHorizontal(-230);
+        person.slowMoveHorizontal(100);
     }
 }

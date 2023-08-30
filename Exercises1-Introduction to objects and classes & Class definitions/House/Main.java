@@ -34,6 +34,7 @@ public class Main {
     // We now want the sunset in a separate method, so that we can call draw and see
     // the picture with the sun up, and then call sunset (a separate method!) to
     // make the sun go down.
+    picture.sunset(300);
 
     // Exercise 1.20
     // Make a person walk up to the house after the sunset.

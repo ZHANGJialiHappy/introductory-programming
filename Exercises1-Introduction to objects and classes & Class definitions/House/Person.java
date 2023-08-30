@@ -22,7 +22,7 @@ public class Person {
         height = 60;
         width = 30;
         // Excercise 1.19: make a person walk up to the house after the sunset.
-        xPosition = 50;
+        xPosition = 280;
         yPosition = 190;
         color = "black";
         isVisible = false;
