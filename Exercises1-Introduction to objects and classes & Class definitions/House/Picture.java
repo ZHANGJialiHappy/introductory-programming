@@ -89,8 +89,8 @@ public class Picture {
         sun.slowMoveVertical(distance);
         // Exercise 1.20
         // Make a person walk up to the house after the sunset.
-        person.makeVisible();
         person.moveHorizontal(-230);
+        person.makeVisible();
         person.slowMoveHorizontal(100);
     }
 }
