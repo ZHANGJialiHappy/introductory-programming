@@ -52,12 +52,19 @@ public class TicketMachine {
      * Check that the amount is sensible.
      */
     public void insertMoney(int amount) {
-        if (amount > 0) {
-            balance = balance + amount;
-        } else {
+        if (amount <= 0) {
             System.out.println("Use a positive amount rather than: " +
                     amount);
+        } else {
+            balance = balance + amount;
+            System.out.println("you insert " + amount + " cents, and you current balance is " + balance + ".");
         }
+        // if (amount > 0) {
+        // balance = balance + amount;
+        // } else {
+        // System.out.println("Use a positive amount rather than: " +
+        // amount);
+        // }
     }
 
     /**
@@ -95,5 +102,11 @@ public class TicketMachine {
         amountToRefund = balance;
         balance = 0;
         return amountToRefund;
+    }
+
+    public int emptyMachine() {
+        int oldTotal = total;
+        total = 0;
+        return oldTotal;
     }
 }
