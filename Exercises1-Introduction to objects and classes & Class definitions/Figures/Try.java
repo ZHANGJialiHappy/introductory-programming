@@ -7,8 +7,8 @@ public class Try {
 
         // Exercise 1.1
         // triangle.makeInvisible();
-        Circle circle = new Circle();
-        circle.makeVisible();
+        // Circle circle = new Circle();
+        // circle.makeVisible();
         // Square square = new Square();
         // square.makeVisible();
 
@@ -30,5 +30,10 @@ public class Try {
 
         // Exercise 1.6
         // circle.changeColor(red);
+
+        // Exercise 3.41
+        Tree jiali = new Tree();
+        // jiali.setup();
+
     }
 }

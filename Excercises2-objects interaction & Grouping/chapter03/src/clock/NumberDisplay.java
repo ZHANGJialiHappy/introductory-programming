@@ -1,3 +1,4 @@
+package clock;
 
 /**
  * The NumberDisplay class represents a digital number display that can hold
@@ -13,14 +14,19 @@
 public class NumberDisplay {
     private int limit;
     private int value;
+    // Excercise 3.38
+    private int underLimit;
 
     /**
      * Constructor for objects of class NumberDisplay.
      * Set the limit at which the display rolls over.
      */
-    public NumberDisplay(int rollOverLimit) {
+    public NumberDisplay(int rollOverLimit, int underLimit) {
         limit = rollOverLimit;
-        value = 0;
+        // Exercise 3.38
+        this.underLimit = underLimit;
+        value = underLimit;
+        // value = 0;
     }
 
     /**
@@ -47,12 +53,14 @@ public class NumberDisplay {
      * Set the value of the display to the new specified value. If the new
      * value is less than zero or over the limit, do nothing.
      */
-    public void setValue(int replacementValue) {
-        if (replacementValue < 0 || replacementValue >= limit) {
-            System.out.println("The hour or minutes are invalid, so it won't be updated.");
-        }
-        if (replacementValue >= 0 && replacementValue < limit) {
+
+    // Exercise 3.10
+    public boolean setValue(int replacementValue) {
+        if (replacementValue < underLimit || replacementValue >= limit) {
+            return (false);
+        } else {
             value = replacementValue;
+            return (true);
         }
     }
 
@@ -61,11 +69,11 @@ public class NumberDisplay {
      * limit is reached.
      */
     public void increment() {
-        if (value == 59) {
-            value = 0;
-        } else {
-            value = value + 1;
-        }
-        // value = (value + 1) % limit;
+        // if (value == 59) {
+        // value = 0;
+        // } else {
+        // value = value + 1;
+        // }
+        value = (value + 1) % limit;
     }
 }
