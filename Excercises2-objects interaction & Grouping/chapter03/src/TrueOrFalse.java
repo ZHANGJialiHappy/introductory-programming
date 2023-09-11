@@ -1,4 +1,4 @@
-// import java.util.ArrayList;
+import java.util.ArrayList;
 
 public class TrueOrFalse {
     // Exercise 3.14
@@ -26,8 +26,20 @@ public class TrueOrFalse {
         System.out.println(bothSame(m, n));
 
         // Exercise 3.13
-        // ArrayList<Boolean> booleanArray = new ArrayList<>();
-        // boolean[]
+        ArrayList<Boolean> checkBooleans = new ArrayList<>();
+        checkBooleans.add(!(4 < 5));
+        checkBooleans.add(!false);
+        checkBooleans.add((2 > 2) || ((4 == 4) && (1 < 0)));
+        checkBooleans.add((2 > 2) || (4 == 4) && (1 < 0));
+        checkBooleans.add((34 != 33) && !false);
+        ArrayList<Boolean> booleansArrays = new ArrayList<>();
+
+        for (boolean checkBoolean : checkBooleans) {
+            boolean booleanElement = checkOut(checkBoolean);
+            booleansArrays.add(booleanElement);
+        }
+        System.out.println(booleansArrays.toString());
+
         // for(int i = 0; )
     }
 }

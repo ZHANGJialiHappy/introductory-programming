@@ -9,9 +9,9 @@ public class Main {
 
         // Exercise 3.10
         ClockDisplay jiali = new ClockDisplay(12, 59);
-        System.out.println(jiali.getTime());
-        jiali.timeTick();
-        System.out.println(jiali.getTime());
+        // System.out.println(jiali.getTime());
+        // jiali.timeTick();
+        // System.out.println(jiali.getTime());
 
         // // Exercise 3.26
         // ClockDisplay jiali2 = new ClockDisplay(21, 58);
