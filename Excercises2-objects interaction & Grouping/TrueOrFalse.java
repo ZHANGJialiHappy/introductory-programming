@@ -39,6 +39,7 @@ public class TrueOrFalse {
             booleansArrays.add(booleanElement);
         }
         System.out.println(booleansArrays.toString());
+        System.out.println(checkBooleans.indexOf(!(4 < 5)));
 
         // for(int i = 0; )
     }
