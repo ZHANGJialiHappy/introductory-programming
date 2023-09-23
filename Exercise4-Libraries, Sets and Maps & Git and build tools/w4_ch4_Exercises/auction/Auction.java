@@ -67,6 +67,20 @@ public class Auction {
         }
     }
 
+    public void close() {
+        for (Lot lot : lots) {
+            Bid highestBid = lot.getHighestBid();
+            if (highestBid != null) {
+                System.out.println(highestBid.getBidder().getName() +
+                        " is the highst bidder for number " +
+                        lot.getNumber() + " lot, with the highst bid's value of " +
+                        highestBid.getValue());
+            } else {
+                System.out.println(lot.getDescription() + " was not sold.");
+            }
+        }
+    }
+
     /**
      * Return the lot with the given number. Return null
      * if a lot with this number does not exist.

@@ -1,26 +1,24 @@
 /**
- * This class implements a technical support system. It is the top level class 
- * in this project. The support system communicates via text input/output 
+ * This class implements a technical support system. It is the top level class
+ * in this project. The support system communicates via text input/output
  * in the text terminal.
  * 
  * This class uses an object of class InputReader to read input from the user,
  * and an object of class Responder to generate responses. It contains a loop
- * that repeatedly reads input and generates output until the users wants to 
+ * that repeatedly reads input and generates output until the users wants to
  * leave.
  * 
- * @author     Michael Kölling and David J. Barnes
- * @version    0.1 (2016.02.29)
+ * @author Michael Kölling and David J. Barnes
+ * @version 0.1 (2016.02.29)
  */
-public class SupportSystem
-{
+public class SupportSystem {
     private InputReader reader;
     private Responder responder;
-    
+
     /**
      * Creates a technical support system.
      */
-    public SupportSystem()
-    {
+    public SupportSystem() {
         reader = new InputReader();
         responder = new Responder();
     }
@@ -30,19 +28,17 @@ public class SupportSystem
      * message and enter into a dialog with the user, until the user
      * ends the dialog.
      */
-    public void start()
-    {
+    public void start() {
         boolean finished = false;
 
         printWelcome();
 
-        while(!finished) {
+        while (!finished) {
             String input = reader.getInput();
 
-            if(input.startsWith("bye")) {
+            if (input.contains("bye")) {
                 finished = true;
-            }
-            else {
+            } else {
                 String response = responder.generateResponse();
                 System.out.println(response);
             }
@@ -54,8 +50,7 @@ public class SupportSystem
     /**
      * Print a welcome message to the screen.
      */
-    private void printWelcome()
-    {
+    private void printWelcome() {
         System.out.println("Welcome to the DodgySoft Technical Support System.");
         System.out.println();
         System.out.println("Please tell us about your problem.");
@@ -66,8 +61,7 @@ public class SupportSystem
     /**
      * Print a good-bye message to the screen.
      */
-    private void printGoodbye()
-    {
+    private void printGoodbye() {
         System.out.println("Nice talking to you. Bye...");
     }
 }
