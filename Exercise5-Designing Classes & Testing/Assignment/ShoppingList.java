@@ -79,11 +79,12 @@ public class ShoppingList {
         Iterator<String> itr = keysOfRecipe.iterator();
         while (itr.hasNext()) {
             String keyOfRecipe = itr.next();
+            Integer amountDifference = recipeIngredients.get(keyOfRecipe);
+
             if (!availablIngredients.containsKey(keyOfRecipe)) {
-                Integer amountDifference = recipeIngredients.get(keyOfRecipe);
                 shoppingList.add(Map.entry(keyOfRecipe, amountDifference));
             } else {
-                Integer amountDifference = recipeIngredients.get(keyOfRecipe) - availablIngredients.get(keyOfRecipe);
+                amountDifference -= availablIngredients.get(keyOfRecipe);
                 if (amountDifference > 0) {
                     shoppingList.add(Map.entry(keyOfRecipe, amountDifference));
                 }
