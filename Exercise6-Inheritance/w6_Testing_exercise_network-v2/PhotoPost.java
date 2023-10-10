@@ -40,4 +40,9 @@ public class PhotoPost extends Post {
     public String getCaption() {
         return caption;
     }
+
+    public void display() {
+        super.display();
+        System.out.println(caption);
+    }
 }

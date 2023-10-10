@@ -33,12 +33,7 @@ public class Order {
 
     public void display() {
         for (Food f : ordered) {
-            if (f instanceof Pizza) {
-                Pizza pizza = (Pizza) f;
-                pizza.display();
-            } else {
-                f.display();
-            }
+            f.display();
         }
         System.out.println(total() + " kr " + "TOTAL");
     }

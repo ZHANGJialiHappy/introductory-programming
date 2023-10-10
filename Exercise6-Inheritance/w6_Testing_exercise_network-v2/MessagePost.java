@@ -28,4 +28,11 @@ public class MessagePost extends Post {
     public String getText() {
         return message;
     }
+
+    public void display() {
+        System.out.println(username);
+        System.out.println(message);
+        super.display();
+
+    }
 }
