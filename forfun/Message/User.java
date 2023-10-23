@@ -8,35 +8,30 @@ public class User {
     }
 
     private String addMessage(Message msg) {
-        if (messageCount < inbox.length) {
+        if (messageCount >= inbox.length - 1) {
+            return "Sorry, the inbox is full!";
+        } else {
             inbox[messageCount] = msg;
             messageCount++;
             return "Message is added!";
-        } else {
-            return "Sorry, the inbox is full!";
         }
     }
 
     public boolean sendMessage(Message msg) {
         return msg.getReceiver().addMessage(msg).equals("Message is added!");
-
-        // if (msg.getReceiver().addMessage(msg).equals("Sorry, the inbox is full!") {
-        // return false;
-        // }
-        // return true;
     }
 
     public String readMessage() {
         if (messageCount == 0) {
             return "There is no message to read!";
         } else {
-            String message = inbox[0].getText();
+            String msg = inbox[0].getText();
             for (int i = 0; i < inbox.length - 1; i++) {
                 inbox[i] = inbox[i + 1];
             }
-            inbox[19] = null;
+            inbox[inbox.length - 1] = null;
             messageCount--;
-            return message;
+            return msg;
         }
     }
 }

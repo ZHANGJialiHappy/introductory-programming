@@ -2,7 +2,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
 
-public class Tiger extends Animal {
+public class Tiger extends Actor {
     // Characteristics shared by all foxes (class variables).
 
     // The age at which a fox can start to breed.
@@ -15,7 +15,7 @@ public class Tiger extends Animal {
     private static final int MAX_LITTER_SIZE = 2;
     // The food value of a single rabbit. In effect, this is the
     // number of steps a fox can go before it has to eat again.
-    private static final int TIGER_FOOD_VALUE = 2;
+    private static final int TIGER_FOOD_VALUE = 4;
     // A shared random number generator to control breeding.
     private static final Random rand = Randomizer.getRandom();
 
@@ -49,7 +49,7 @@ public class Tiger extends Animal {
      * @param field     The field currently occupied.
      * @param newTigers A list to return newly born foxes.
      */
-    public void act(List<Animal> newTigers) {
+    public void act(List<Actor> newTigers) {
         incrementAge();
         incrementHunger();
         if (isAlive()) {
@@ -97,10 +97,10 @@ public class Tiger extends Animal {
         while (it.hasNext()) {
             Location where = it.next();
             Object animal = field.getObjectAt(where);
-            if (animal instanceof Fox) {
-                Fox fox = (Fox) animal;
-                if (fox.isAlive()) {
-                    fox.setDead();
+            if (animal instanceof Fox | animal instanceof Rabbit) {
+                Animal eatenAnimal = (Animal) animal;
+                if (eatenAnimal.isAlive()) {
+                    eatenAnimal.setDead();
                     foodLevel = TIGER_FOOD_VALUE;
                     return where;
                 }
@@ -115,7 +115,7 @@ public class Tiger extends Animal {
      * 
      * @param newTigers A list to return newly born foxes.
      */
-    private void giveBirth(List<Animal> newTigers) {
+    private void giveBirth(List<Actor> newTigers) {
         // New foxes are born into adjacent locations.
         // Get a list of adjacent free locations.
         Field field = getField();

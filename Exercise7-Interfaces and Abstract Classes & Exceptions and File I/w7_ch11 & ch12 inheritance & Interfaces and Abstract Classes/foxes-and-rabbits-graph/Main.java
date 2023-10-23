@@ -3,11 +3,11 @@ public class Main {
 
         // This is how you start the simulator
         Simulator s = new Simulator();
-        // s.runLongSimulation();
+        s.runLongSimulation();
 
         // If you want to run shorter simulations look at:
         // s.simulateOneStep();
-        s.simulate(10);
+        // s.simulate(10);
 
     }
 }

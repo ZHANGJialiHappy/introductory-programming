@@ -8,9 +8,6 @@ public class Order {
         ordered = new ArrayList<>();
     }
 
-    // the display() method must print out all the food ordered, followed by the
-    // total for the order. The output must follow this format (for an example order
-    // containing a burger, a coke, and a pizza with three toppings):
     public void addFood(Food food) {
         ordered.add(food);
     }

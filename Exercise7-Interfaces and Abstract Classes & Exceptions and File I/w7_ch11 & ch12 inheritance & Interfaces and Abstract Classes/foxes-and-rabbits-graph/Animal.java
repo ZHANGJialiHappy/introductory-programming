@@ -35,7 +35,7 @@ public abstract class Animal {
      * 
      * @param newAnimals A list to receive newly born animals.
      */
-    abstract public void act(List<Animal> newAnimals);
+    abstract public void act(List<Actor> newAnimals);
 
     /**
      * Check whether the animal is alive or not.
@@ -118,6 +118,7 @@ public abstract class Animal {
         if (canBreed() && getRand().nextDouble() <= getBreddingProbability()) {
             births = getRand().nextInt(getMaxLitterSize()) + 1;
         }
+
         return births;
     }
 
