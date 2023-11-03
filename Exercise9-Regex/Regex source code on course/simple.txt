@@ -1,0 +1,64 @@
+abcdefghijklmnopqurtuvwxyz
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+1234567890
+999
+
+well will wall w ll
+20s20
+
+Anita V., David C., Ralph K., Laura R., Alina T., Andy G., Rasmus R.,
+
+MetaCharacters (Need to be escaped):
+.[{()\^$|?*+
+111
+09-12-2009
+11.09.2019
+21.10.2004
+25.05.1990
+
+a
+ab
+abb
+abbbb
+
+Fri,oct 6,2016
+12/12/12
+
+22
+34
+254
+
+$200
+
+engne
+french
+happen
+modern art
+char
+depart
+
+Mr. Schafer
+Mr Smith
+Mrs. Robinson
+Mr. T
+
+https://regexper.com
+https://learnit.dk
+http://regex101.com
+
+<bold>action</bold>
+<tag>action</tag>
+
+Pokemon123
+PokPok
+
+12.2007
+03 2001
+11 201e
+abababa
+baab
+124=124
+9-12
+
+
+mahv@itu.dk

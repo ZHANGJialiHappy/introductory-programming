@@ -1,16 +1,16 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Todo {
     private List<Task> todoList;
     private int runningTotal;
-    private int amountCompleteWork;
 
     public Todo() {
         todoList = new ArrayList<>();
         runningTotal = 0;
-        amountCompleteWork = 0;
     }
 
     public void addTask(String description, int priority, int minutes) {
@@ -33,7 +33,7 @@ public class Todo {
         } else {
             todoList.forEach(t -> System.out.println(t));
         }
-        if (amountCompleteWork > 0) {
+        if (runningTotal > 0) {
             System.out.println(runningTotal + " minutes of work done!");
         }
     }
@@ -43,12 +43,7 @@ public class Todo {
             System.out.println("Invalid index");
         } else {
             runningTotal += todoList.get(index).getWorkload();
-            amountCompleteWork++;
             todoList.remove(index);
-            // List<Task> a = todoList.stream()
-            // .filter(t -> todoList.indexOf(t) !=(index))
-            // .toList();
-            // System.out.println(a);
         }
     }
 
@@ -56,7 +51,7 @@ public class Todo {
         System.out.println("Filtered todo:\n--------------");
         List<Task> a = todoList.stream()
                 .filter(t -> t.getPriority() <= limit)
-                .toList();
+                .collect(Collectors.toList());
         if (a.size() == 0) {
             System.out.println("No tasks with given priority");
         } else {
@@ -66,14 +61,10 @@ public class Todo {
 
     public void printPrioritized() {
         System.out.println("Prioritized todo:\n-----------------");
-        todoList.sort(Comparator
-                .comparing(Task::getPriority)
-                .thenComparing(Task::getWorkload));
-        // todoList.sort((t1, t2) -> t1.priority - t2.priority);
-        // todoList.sort((t1, t2) -> t1.workload - t2.workload);
-        // todoList.sort((t1, t2) ->
-        // t1.getDescription().compareTo(t2.getDescription()));
-        // todoList.sort(Comparator.comparing(Task::getDescription));
+        Collections.sort(todoList);
+        // todoList.sort(Comparator
+        // .comparing(Task::getPriority)
+        // .thenComparing(Task::getWorkload));
 
         todoList.forEach(t -> System.out.println(t));
     }
