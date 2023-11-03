@@ -39,16 +39,14 @@ public class PepTalk {
             startIndex = endIndex + 1;
         }
         dividedWords.add(words.substring(startIndex, words.length()));
-        // System.out.println(vowelsIndex);
-        // System.out.println(dividedWords);
         return dividedWords;
     }
 
     private static ArrayList<Integer> getVowelsIndex(String words) {
-        String[] vowels = { "a", "e", "i", "o", "u", "A", "E", "I", "O", "U" };
+        ArrayList<String> vowels = new ArrayList<>(Arrays.asList("a", "e", "i", "o", "u", "A", "E", "I", "O", "U"));
         ArrayList<Integer> vowelsIndex = new ArrayList<>();
         for (int i = 0; i < words.length(); i++) {
-            if (Arrays.asList(vowels).contains(String.valueOf(words.charAt(i)))) {
+            if (vowels.contains(words.substring(i, i + 1))) {
                 vowelsIndex.add(i);
             }
         }
