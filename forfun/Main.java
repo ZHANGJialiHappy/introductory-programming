@@ -11,13 +11,13 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        // Set<String> s = new HashSet<>();
-        // s.add("1");
-        // s.add("1");
-
-        // System.out.println(s.size());
-
-        myMethod(2);
+        int n = 0;
+        for (int i = 1; i <= 4; i++) {
+            for (int j = 1; j <= i; j++) {
+                n++;
+            }
+        }
+        System.out.println(n);
 
     }
 }

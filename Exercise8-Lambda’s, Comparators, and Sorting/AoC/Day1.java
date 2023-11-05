@@ -54,6 +54,10 @@ public class Day1 {
         // Hack since streams can only be used once. 
         // This code is run whenever the get() method is called.
 
+        int salary = 500;
+        float percentage = 1.2f;
+        salary = Math.round(salary * percentage);
+
         Supplier<Stream<String>> in = 
             () -> {
                 try {

@@ -8,10 +8,10 @@ public class Employee {
     private List<String> assignedTasks;
     private int totalProcessed;
 
-    public Employee(String name, int salary, int departmentId) {
+    public Employee(String name, int departmentId, int salary) {
         this.name = name;
-        this.salary = salary;
         this.departmentId = departmentId;
+        this.salary = salary;
         totalProcessed = 0;
         assignedTasks = new ArrayList<>();
     }
@@ -40,14 +40,13 @@ public class Employee {
         if (assignedTasks.size() == 0) {
             System.out.println("no tasks to process");
         } else {
-            System.out.println("processing task " + assignedTasks.get(0));
-            assignedTasks.remove(0);
+            System.out.println(String.format("processing task %s", assignedTasks.remove(0)));
             totalProcessed++;
         }
     }
 
     public String toString() {
-        return "name: " + this.name + ", department Id: " + this.departmentId + ", salary: " + this.salary;
+        return String.format("name: %s, department Id: %d, salary: %d", name, departmentId, salary);
     }
 
     public void addTask(String newTask) {

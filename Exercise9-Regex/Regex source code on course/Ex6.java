@@ -7,7 +7,7 @@ public class Ex6 {
 
     public static void main(String[] args) {
 
-        String text = "Searching the text for the occurences of word text";
+        String text = "text text text text text text text";
 
         String patternString = "text";
 
@@ -18,7 +18,7 @@ public class Ex6 {
 
         while (matcher.find() && matchNum < 5) {
             matchNum++;
-            System.out.println("Occurence#: " + matchNum + " : "
+            System.out.println("Occurrence#: " + matchNum + " : "
                     + matcher.start() + " - " + matcher.end());
             // matcher.reset();
 
