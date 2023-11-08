@@ -61,4 +61,19 @@ public class Company {
         return empwithMinTask;
     }
 
+    public void assignTask(String task, int depId) {
+        findLeastBusy(depId).addTask(task);
+    }
+
+    public void raiseSalary(int percentage) {
+        int highestPorcessedTask = allEmployees.stream()
+                .max(Comparator.comparing(Employee::getTotalProcessed))
+                .get().getTotalProcessed();
+        allEmployees.stream()
+                .filter(e -> e.getTotalProcessed() == highestPorcessedTask)
+                .forEach(e -> {
+
+                });
+    }
+
 }
