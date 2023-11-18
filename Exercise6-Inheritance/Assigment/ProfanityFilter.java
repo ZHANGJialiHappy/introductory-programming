@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class ProfanityFilter {
-    private String[] swearWords;
+    private List<String> swearWords;
     private List<String> text;
 
     public ProfanityFilter() {
@@ -13,7 +13,7 @@ public class ProfanityFilter {
 
     public void read() {
         try (Scanner sc = new Scanner(System.in)) {
-            swearWords = sc.nextLine().toLowerCase().split(" ");
+            swearWords = Arrays.asList(sc.nextLine().toLowerCase().split(" "));
             while (sc.hasNextLine()) {
                 String input = sc.nextLine();
                 text.add(input);
@@ -25,14 +25,14 @@ public class ProfanityFilter {
     }
 
     private String convert(String s) {
-        String[] marks = { " ", ",", ".", "!", "?" };
+        List<String> marks = Arrays.asList(" ", ",", ".", "!", "?");
         String word = "";
         String result = "";
         for (int i = 0; i < s.length(); i++) {
-            if (!Arrays.asList(marks).contains(String.valueOf(s.charAt(i)))) {
+            if (!marks.contains(String.valueOf(s.charAt(i)))) {
                 word = word + s.charAt(i);
             } else {
-                if (Arrays.asList(swearWords).contains(word.toLowerCase())) {
+                if (swearWords.contains(word.toLowerCase())) {
                     word = replace(word);
                 }
                 result = result + word + s.charAt(i);
@@ -40,7 +40,7 @@ public class ProfanityFilter {
             }
         }
         if (word != "") {
-            if (Arrays.asList(swearWords).contains(word.toLowerCase())) {
+            if (swearWords.contains(word.toLowerCase())) {
                 word = replace(word);
             }
             result = result + word;

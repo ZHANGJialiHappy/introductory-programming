@@ -1,0 +1,17 @@
+table {
+    border-collapse: collapse;
+}
+
+a {
+    text-decoration: none;
+}
+
+td {
+    height: 50px; 
+    width: 50px;
+    border: 1px solid black;
+    background-color: rgb(129, 216, 141);
+    font-size: 42pt;  
+    text-align: center;
+    vertical-align: middle;
+}
