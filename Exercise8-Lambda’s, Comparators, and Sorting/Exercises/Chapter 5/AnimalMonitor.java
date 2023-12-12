@@ -226,7 +226,7 @@ public class AnimalMonitor {
                 .filter(s -> s.getSpotter() == spotterID)
                 .filter(s -> s.getPeriod() == dayID)
                 .map(s -> s.getCount())
-                .reduce(0, (subTotal, c) -> subTotal += c);
+                .reduce(0, (subTotal, c) -> subTotal + c);
         return totalCount;
     }
 
