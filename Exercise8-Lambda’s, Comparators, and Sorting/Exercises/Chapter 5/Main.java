@@ -11,8 +11,8 @@ public class Main {
 
     public static void main(String[] args) {
         System.out.println(myMethod(true, true));
-        // AnimalMonitor jiali = new AnimalMonitor();
-        // jiali.addSightings("sightings.csv");
+        AnimalMonitor jiali = new AnimalMonitor();
+        jiali.addSightings("sightings.csv");
         // jiali.printList();
         // System.out.println(jiali.getCount("Buffalo"));
 
@@ -24,8 +24,8 @@ public class Main {
         // jiali.printEndangered(a, 30);
         // jiali.printSightingsOf("Topi");
         // jiali.printSightingsBy(1);
-        // jiali.getCount("Topi");
-        // jiali.getSightingsInArea("Topi", 1);
+        System.out.println(jiali.getCount("Mountain Gorilla"));
+        jiali.getSightingsInArea("Topi", 1);
         // jiali.getSightingsOf("Topi");
         // jiali.printSightingsIn(1);
         // jiali.printCounts("Mountain Gorilla");

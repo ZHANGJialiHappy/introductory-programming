@@ -1,7 +1,6 @@
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * Monitor counts of different types of animal.
@@ -111,12 +110,12 @@ public class AnimalMonitor {
      * @return The count of sightings of the given animal.
      */
     public int getCount(String animal) {
-        int total = 0;
-        for (Sighting sighting : sightings) {
-            if (animal.equals(sighting.getAnimal())) {
-                total = total + sighting.getCount();
-            }
-        }
+        // int total = 0;
+        // for (Sighting sighting : sightings) {
+        // if (animal.equals(sighting.getAnimal())) {
+        // total = total + sighting.getCount();
+        // }
+        // }
         // int total2 = 0;
         // Iterator<Sighting> it = sightings.iterator();
         // while (it.hasNext()) {
@@ -125,14 +124,14 @@ public class AnimalMonitor {
         // total2 += record.getCount();
         // }
         // }
-        // int total2 = sightings.stream()
-        // .filter(s -> s.getAnimal().equals(animal))
-        // .map(s -> s.getCount())
-        // .reduce(0, (subTotal, count) -> subTotal += count);
+        int total2 = sightings.stream()
+                .filter(s -> s.getAnimal().equals(animal))
+                .map(s -> s.getCount())
+                .reduce(0, (subTotal, count) -> subTotal + count);
         // System.out.println(total);
         // System.out.println(total2);
 
-        return total;
+        return total2;
     }
 
     /**
@@ -170,13 +169,10 @@ public class AnimalMonitor {
         // System.out.println(s.getDetails());
         // }
         // System.out.println(".....");
-        // List<Sighting> records2 = sightings.stream()
+        // sightings.stream()
         // .filter(s -> s.getAnimal().equals(animal))
         // .filter(s -> s.getArea() == area)
-        // .toList();
-
-        // records2.forEach(r -> System.out.println(r.getDetails()));
-        // var arraylist= (ArrayList<Sighting>)records2;
+        // .forEach(s -> System.out.println(s.getDetails()));
 
         return records;
     }
