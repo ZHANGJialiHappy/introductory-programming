@@ -7,7 +7,7 @@ public class Ex8 {
 
     public static void main(String[] args) {
 
-        String text1 = "The text is searched for the occurences of the word text";
+        String text1 = "The textex is searched for the occurences of the word texttex";
 
         String patternString1 = "text";
         Pattern pattern1 = Pattern.compile(patternString1);

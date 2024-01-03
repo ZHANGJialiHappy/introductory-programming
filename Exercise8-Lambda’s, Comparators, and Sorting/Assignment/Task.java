@@ -1,6 +1,4 @@
-import java.util.Comparator;
-
-public class Task implements Comparable<Task>, Comparator<Task> {
+public class Task implements Comparable<Task> {
     private String description;
     private int priority;
     private int workload;
@@ -58,16 +56,6 @@ public class Task implements Comparable<Task>, Comparator<Task> {
         } else {
             return 1;
         }
-
-    }
-
-    @Override
-    public int compare(Task t1, Task t2) {
-        int priorityCompare = Integer.valueOf(t2.getDescription()) - (Integer.valueOf(t1.getDescription()));
-        if (priorityCompare != 0) {
-            return priorityCompare;
-        }
-        return Integer.valueOf(t2.getDescription()) - (Integer.valueOf(t1.getDescription()));
 
     }
 
